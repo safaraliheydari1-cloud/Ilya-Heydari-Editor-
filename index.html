@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilya Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            direction: rtl; /* Right-to-left for Persian */
+            text-align: right; /* Align text to the right */
+            max-width: 600px; /* Constrain width as per instructions */
+            margin: auto; /* Center the content */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow-y: auto; /* Make content scrollable */
+            height: 100vh; /* Take full viewport height for scrolling */
+            box-sizing: border-box; /* Include padding in height */
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .container {
+            padding: 20px;
+        }
+        section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
+            border-radius: 8px;
+        }
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Vazirmatn', sans-serif;
+            resize: vertical;
+            min-height: 100px;
+            max-width: 100%; /* Ensure it doesn't overflow */
+            box-sizing: border-box;
+        }
+        form button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        form button:hover {
+            background-color: #218838;
+        }
+        .contact-info p {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ilya Editor</h1>
+        <p>ساخت کلیپ ، ادیت حرفه ویدئو ، ویرایش عکس و ویدیو ، حذف اجسام مختلف از یک عکس و یا ویدیو</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>نمونه کار ویدیو</h2>
+            <p>اینجا می‌توانید یکی از نمونه کارهای ویدیویی ما را مشاهده کنید. این ویدیوها کیفیت و سبک کاری ما را به شما نشان می‌دهند.</p>
+            <div class="video-wrapper">
+                <!-- Placeholder for a sample video from Aparat. You must replace 'YOUR_APARAT_VIDEO_HASH' with your actual video ID from Aparat. -->
+                <iframe src="https://www.aparat.com/video/video/embed/videohash/YOUR_APARAT_VIDEO_HASH/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>
+                <!-- To find your video hash on Aparat:
+                     1. Go to your video on Aparat.
+                     2. Click the "اشتراک گذاری" (Share) button.
+                     3. Copy the URL or embed code. The video hash is usually a part of the URL (e.g., in https://www.aparat.com/v/YOUR_APARAT_VIDEO_HASH).
+                -->
+            </div>
+            <p style="margin-top: 15px;">برای مشاهده نمونه کارهای بیشتر و یا قرار دادن نمونه کار خودتان، با ما تماس بگیرید.</p>
+        </section>
+
+        <section>
+            <h2>درخواست ساخت ویدیو مشابه</h2>
+            <p>آیا ویدیوی نمونه را پسندیدید و می‌خواهید ویدیویی شبیه به آن یا با تغییرات دلخواه خود داشته باشید؟ درخواست خود را اینجا ثبت کنید.</p>
+            <form onsubmit="alert('درخواست شما با موفقیت ارسال شد! به زودی با شما تماس می‌گیریم.'); return false;">
+                <label for="request-details">توضیحات درخواست شما (سبک ویدیو، جزئیات، مدت زمان و...):</label>
+                <textarea id="request-details" name="request_details" rows="5" placeholder="لطفاً جزئیات درخواست خود را اینجا بنویسید..."></textarea>
+                <button type="submit">ارسال درخواست</button>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <h2>پشتیبانی و تماس با ما</h2>
+            <p>برای هرگونه سوال، مشاوره، و یا ثبت درخواست فوری، می‌توانید با شماره تلفن پشتیبانی ما تماس بگیرید.</p>
+            <p>شماره تماس: <a href="tel:+09038075907">09038075907</a></p>
+            <p>ما همواره آماده پاسخگویی به شما هستیم.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Ilya Editor. تمامی حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>
